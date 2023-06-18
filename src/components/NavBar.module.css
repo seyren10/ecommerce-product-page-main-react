@@ -1,0 +1,143 @@
+.primary-navigation {
+  display: flex;
+  align-items: baseline;
+  gap: 4rem;
+  color: var(--clr-neutral-400);
+  border-block-end: 1px solid var(--clr-neutral-300);
+  padding-inline: var(--_padding-main);
+}
+
+.mobile-toggler {
+  border: none;
+  background-color: transparent;
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.flex > img {
+  min-width: 10rem;
+}
+.flex > button > img {
+  min-width: 1rem;
+}
+
+@media (max-width: 35em) {
+  .primary-navigation {
+    border: none;
+    margin-block-start: 1rem;
+  }
+  .hide {
+    display: none !important;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 60%;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    background-color: var(--clr-neutral-100);
+    gap: 1rem;
+    padding: 2rem;
+    padding-block-start: 5rem;
+    font-weight: 700;
+    color: var(--clr-neutral-600);
+  }
+
+  .nav-list > li.active {
+    color: var(--clr-neutral-300) !important;
+  }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9997;
+    background-color: var(--clr-backdrop);
+  }
+
+  .nav-list > li {
+    --pbs: 0rem;
+    --pbe: 0.5rem;
+  }
+
+  .mobile-toggler {
+    display: block;
+  }
+
+  .close-button {
+    position: fixed;
+    top: 1rem;
+    left: 1.6rem;
+    z-index: 9999;
+  }
+}
+
+.nav-list li {
+  padding-block-start: var(--pbs, 2rem);
+  padding-block-end: var(--pbe, 2.5rem);
+
+  position: relative;
+}
+.nav-list li.active {
+  color: var(--clr-neutral-600);
+}
+.nav-list li.active::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  inset: auto 0 0 0;
+  background-color: var(--clr-primary-400);
+}
+.profile {
+  margin-inline-start: auto;
+  display: flex;
+  gap: 2rem;
+}
+
+.profile > .avatar {
+  cursor: pointer;
+  width: min(7vw, 3rem);
+
+  position: relative;
+}
+.profile > .avatar:hover:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: scale(1.08);
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--clr-primary-400);
+}
+
+.cart {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  position: relative;
+}
+
+.cart__count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(0.5rem);
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-400);
+  font-size: 0.6rem;
+  padding: 0.1em 0.7em;
+  border-radius: 1em;
+}

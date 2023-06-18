@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+/* GLOBAL VARIABLES */
+:root {
+  --clr-primary-300: hsl(25, 100%, 94%);
+  --clr-primary-400: hsl(26, 100%, 55%);
+
+  --clr-neutral-600: hsl(0, 0%, 0%);
+  --clr-neutral-500: hsl(220, 13%, 13%);
+  --clr-neutral-400: hsl(219, 9%, 45%);
+  --clr-neutral-300: hsl(220, 14%, 75%);
+  --clr-neutral-200: hsl(223, 64%, 98%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --clr-backdrop: hsl(0 0% 0% / 0.75);
+}
+
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* COMMON STYLES*/
+body {
+  --_padding-main: 1.5rem;
+  font-family: "Kumbh Sans", sans-serif;
+  /* margin-inline: min(5vw, 6rem); */
+}
+@media (min-width: 35em) {
+  body {
+    margin-inline: min(10vw, 12rem);
+  }
+}
