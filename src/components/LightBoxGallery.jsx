@@ -2,7 +2,10 @@ import { useContext } from "react";
 import { uiToggleCtx } from "../context/context";
 
 import ImageGallery from "./ImageGallery";
-import styles from "./LightboxGallery.module.css";
+
+
+import styles from "./LightBoxGallery.module.css";
+
 const LightboxGallery = () => {
   const { toggleLightboxGallery } = useContext(uiToggleCtx);
 
