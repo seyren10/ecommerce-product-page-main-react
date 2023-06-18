@@ -1,7 +1,7 @@
 .primary-navigation {
   display: flex;
   align-items: baseline;
-  gap: 4rem;
+  gap: min(3vw, 4rem);
   color: var(--clr-neutral-400);
   border-block-end: 1px solid var(--clr-neutral-300);
   padding-inline: var(--_padding-main);
@@ -107,6 +107,7 @@
 }
 
 .profile > .avatar {
+  flex-shrink: 0;
   cursor: pointer;
   width: min(7vw, 3rem);
 
@@ -123,6 +124,7 @@
 }
 
 .cart {
+  flex-shrink: 0;
   border: none;
   background-color: transparent;
   cursor: pointer;

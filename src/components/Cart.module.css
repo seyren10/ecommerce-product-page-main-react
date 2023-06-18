@@ -12,6 +12,19 @@
 
   box-shadow: 0 1rem 3rem -1.5rem hsla(0, 0%, 0%, 0.5);
 }
+
+@media (max-width: 35em) {
+  .container {
+    width: 98%;
+    margin-inline: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .empty-cart {
+    width: 100% !important;
+  }
+}
 .container > div:first-child {
   font-weight: 700;
   border-bottom: 1px solid var(--clr-neutral-300);
