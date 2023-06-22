@@ -4,11 +4,36 @@ import { CartContext } from "./context";
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD":
-      return {
-        items: [...state.items, action.value],
-        cartCount:
-          state.items.reduce((a, c) => a + c.qty, 0) + action.value.qty,
-      };
+      // eslint-disable-next-line no-case-declarations
+      let currentCart = "";
+      // eslint-disable-next-line no-case-declarations
+      const foundItem = state.items.find(({ id }) => id === action.value.id);
+  
+      if (!foundItem) {
+        currentCart = {
+          items: [...state.items, action.value],
+          cartCount:
+            state.items.reduce((a, c) => a + c.qty, 0) + action.value.qty,
+        };
+      } else {
+        const foundItemIndex = state.items.findIndex(
+          ({ id }) => id === foundItem.id
+        );
+        const oldItem = state.items[foundItemIndex];
+        const newItem = {
+          ...oldItem,
+          qty: oldItem.qty + action.value.qty,
+        };
+
+        const cartItems = state.items.filter((item) => item !== oldItem);
+        currentCart = {
+          items: [...cartItems, newItem],
+          cartCount:
+            state.items.reduce((a, c) => a + c.qty, 0) + action.value.qty,
+        };
+      }
+
+      return currentCart;
     case "DELETE":
       // eslint-disable-next-line no-case-declarations
       const filteredItems = state.items.filter((item) => item.id !== action.id);

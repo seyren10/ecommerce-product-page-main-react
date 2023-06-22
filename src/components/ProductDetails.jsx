@@ -10,7 +10,7 @@ const ProductControls = () => {
   const { addToCart } = useContext(CartContext);
 
   const sampleProduct = {
-    id: Math.random(),
+    id: 'p1',
     image: "/images/image-product-1-thumbnail.jpg",
     name: "Fall Limited Edition Sneakers",
     prices: {
